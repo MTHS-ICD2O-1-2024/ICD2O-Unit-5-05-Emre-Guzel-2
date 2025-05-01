@@ -18,8 +18,7 @@ function clauclateTypeOfTriangle() {
   if ((lengthA + lengthB > lengthC) &&
     (lengthA + lengthC > lengthB) &&
     (lengthB + lengthC > lengthA)) {
-
-    
+    // Setting the if and else statments 
     if (lengthA == lengthB && lengthB == lengthC) {
       message = "equilateral triangle"
     } else if (lengthA == lengthB || lengthA == lengthC || lengthB == lengthC ) {
@@ -28,7 +27,7 @@ function clauclateTypeOfTriangle() {
         message = "Scalene triangle"
       }
   } else {
-    message = "these lengths do not form a valid triangle"
+    message = "Not a triangle "
   }
 
   document.getElementById("result").innerHTML = message
