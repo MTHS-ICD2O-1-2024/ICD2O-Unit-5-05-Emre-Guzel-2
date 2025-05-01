@@ -7,17 +7,28 @@
 
 "use strict"
 // Setting the functoin 
-function musuemDiscountAgeCalculator() {
+function clauclateTypeOfTriangle() {
   // Setting the variables
-  const age = parseInt(document.getElementById("age").value)
-  const day = document.getElementById("day").value
+  const lengthA = parseInt(document.getElementById("length-A").value)
+  const lengthB = parseInt(document.getElementById("length-B").value)
+  const lengthC = parseInt(document.getElementById("length-C").value)
   let message = ""
 
-  // Setting the if statement
-  if ((day == "Tuesday" || day == "Thursday") || (age > 12 && age < 21)){
-    message = "You're eligible for student pricing";
+  // This code checks for input can form a triangle
+  if ((lengthA + lengthB > lengthC) &&
+    (lengthA + lengthC > lengthB) &&
+    (lengthB + lengthC > lengthA)) {
+
+    
+    if (lengthA == lengthB && lengthB == lengthC) {
+      message = "equilateral triangle"
+    } else if (lengthA == lengthB || lengthA == lengthC || lengthB == lengthC ) {
+      message = "isosceles triangle"
+    }else{
+        message = "Scalene triangle"
+      }
   } else {
-    message = "You must pay the regular pricing"
+    message = "these lengths do not form a valid triangle"
   }
 
   document.getElementById("result").innerHTML = message
